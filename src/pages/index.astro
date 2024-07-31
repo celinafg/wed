@@ -1,0 +1,15 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SkipLink from "@utils/SkipLink.astro";
+import Home from "@components/Home.astro";
+import BackToTop from "@utils/BackToTop.astro";
+---
+
+<Layout title="ENZO+CELINA">
+  <SkipLink />
+  <div class="sr-only" id="start"></div>
+  <Home />
+  <section aria-label="Utilities">
+    <BackToTop />
+  </section>
+</Layout>

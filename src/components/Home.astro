@@ -1,0 +1,172 @@
+---
+import { Image } from "astro:assets";
+import ExternalLink from "@utils/ExternalLink.astro";
+import gitHub from "@images/github.svg";
+import Timeline from "./Timeline.astro";
+const currentYear = new Date().getFullYear();
+export const prerender = false;
+---
+
+<div class="wrapper">
+  <main id="main" class="main">
+    <section aria-label="Home" id="home" class="section">
+      <div class="date">
+        <Image
+          alt="angel"
+          src="https://res.cloudinary.com/digifab/image/upload/v1722138525/wedding/angel1_zzyoxv.png"
+          height={90}
+          width={90}
+          loading="eager"
+        />
+        <div>
+          <p>WEDNESDAY</p>
+          <h4>OCTOBER 16TH</h4>
+          <p>2024</p>
+        </div>
+
+        <Image
+          alt="angel"
+          class="flip left"
+          src="https://res.cloudinary.com/digifab/image/upload/v1722138525/wedding/angel1_zzyoxv.png"
+          height={90}
+          width={90}
+          loading="eager"
+        />
+      </div>
+      <h1>ENZO AND CELINA</h1>
+
+      <div class="where">
+        <div class="pm">
+          <p>2PM, THE 16TH OF OCTOBER</p>
+        </div>
+        <div>
+          <h5>CEREMONY VENUE</h5>
+          <p>
+            <span class="chapel" id="chapel"> CHAPEL ON THE HILL</span>
+            <br />BATULAO RD. CALACA, DON BOSCO NASUGBU BATANGAS
+          </p>
+        </div>
+        <div>
+          <h5>RECEPTION VENUE</h5>
+          <p>
+            <span class="chapel">ANTONIOS</span>
+            <br />BATULAO RD. CALACA, DON BOSCO NASUGBU BATANGAS
+          </p>
+        </div>
+      </div>
+      <button>
+        <a href="#rsvp"> RSVP</a>
+      </button>
+    </section>
+    <Timeline />
+    <section id="rsvp" aria-label="RSVP" class="section">
+      <p>RSVP</p>
+    </section>
+  </main>
+</div>
+<section></section>
+<footer>
+  <p>&copy; {currentYear} CG</p>
+</footer>
+
+<style>
+  .date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left {
+    transform: scaleX(-1);
+  }
+  .wrapper {
+    margin: 0 auto;
+    max-width: 768px;
+    padding: 0 var(--space-s);
+  }
+  .colblue {
+    background-color: blanchedalmond;
+  }
+
+  img {
+    height: auto;
+    margin: var(--space-l) 0;
+  }
+
+  section {
+    margin: var(--space-2xl) 0;
+  }
+
+  .button-wrapper {
+    margin: var(--space-xl) 0;
+  }
+
+  .date > div {
+    padding: 0 2rem;
+  }
+
+  .pm {
+    font-size: var(--space-s);
+  }
+
+  .where {
+    margin: 0 auto;
+    padding-bottom: 5rem;
+  }
+
+  .where > div {
+    padding-top: 2rem;
+  }
+
+  .where > div > p {
+    margin: 0 auto;
+  }
+  #home {
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: var(--space-xs);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: var(--space-xs);
+  }
+
+  li {
+    margin: 0;
+  }
+
+  h5 > div > p {
+    width: 20vw;
+  }
+
+  .smol {
+    font-size: var(--step-0);
+  }
+
+  footer {
+    border-top: 1px solid var(--color-grey-dark);
+    text-align: center;
+    margin-top: var(--space-3xl);
+    padding: var(--space-l) 0;
+  }
+
+  footer p {
+    font-size: var(--step-0);
+  }
+
+  .chapel {
+    font-family: "Leifa bold", sans-serif;
+    font-size: 1.3rem;
+  }
+
+  h1 {
+    margin: 0;
+  }
+</style>
+<script></script>

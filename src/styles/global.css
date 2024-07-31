@@ -1,0 +1,234 @@
+/* Typography */
+
+@font-face {
+  font-display: optional;
+  font-family: "Leifa";
+  font-style: normal;
+  font-weight: 200;
+  src: url("https://res.cloudinary.com/digifab/raw/upload/v1722138733/wedding/Fontspring-DEMO-leifa-regular-1_utpuee.otf")
+    format("woff2");
+}
+
+@font-face {
+  font-display: optional;
+  font-family: "Leifa med";
+  src: url("https://res.cloudinary.com/digifab/raw/upload/v1722138677/wedding/Fontspring-DEMO-leifa-medium-1_hcoiuo.otf")
+    format("woff2");
+}
+
+@font-face {
+  font-display: optional;
+  font-family: "Leifa bold";
+  font-style: normal;
+  src: url("https://res.cloudinary.com/digifab/raw/upload/v1722138664/wedding/Fontspring-DEMO-leifa-bold-1_oi70ja.otf")
+    format("woff2");
+}
+
+@font-face {
+  font-display: optional;
+  font-family: "DM Sans 300";
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://res.cloudinary.com/digifab/raw/upload/v1722138900/wedding/dm-sans-latin-300-normal_luell8.ttf")
+    format("woff2");
+}
+/* Atomic Design Tokens */
+:root {
+  --color-primary: #1a1a1a;
+  --color-secondary: #5865a3;
+  --color-background: #f5f5f5;
+  --color-text: #333;
+  --font-primary: "Leifa", sans-serif;
+  --font-secondary: "DM Sans 300", sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 2rem;
+  --space-l: 4rem;
+  --step--2: 0.875rem;
+  --step--1: 1rem;
+  --step-0: 1.125rem;
+  --step-1: 1.5rem;
+  --step-2: 2rem;
+  --step-3: 3rem;
+  --step-4: 4rem;
+  --step-5: 5rem;
+  --step-6: 6rem;
+}
+
+/* Adjust root font size based on screen width */
+@media (max-width: 480px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-secondary);
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: var(--space-m);
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+  font-family: var(--font-primary);
+}
+
+h5 {
+  color: var(--color-secondary);
+  font-family: "Leifa med";
+}
+h1 {
+  font-family: var(--font-primary);
+  font-size: var(--step-5);
+  margin-bottom: var(--space-m);
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-size: var(--step-4);
+  margin-bottom: var(--space-s);
+}
+
+h3 {
+  font-family: var(--font-primary);
+  font-size: var(--step-3);
+}
+
+h4 {
+  font-family: var(--font-primary);
+  font-size: var(--step-1);
+}
+
+a,
+blockquote,
+ul,
+ol {
+  font-family: var(--font-secondary);
+  font-size: var(--step-0);
+  margin-bottom: var(--space-s);
+}
+
+button {
+  background-color: var(--color-secondary);
+  border: none;
+  border-radius: 0.3rem;
+  color: white;
+  font-family: var(--font-primary);
+  font-size: var(--step-0);
+  letter-spacing: 0.1ch;
+  padding: var(--space-xs) var(--space-s);
+  text-decoration: none;
+}
+
+button > a {
+  color: white;
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 var(--space-s);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-l);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-m);
+}
+
+.section {
+  margin-bottom: var(--space-l);
+}
+
+.cont {
+  text-align: center;
+  width: 100%;
+}
+
+.angels {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-s);
+}
+
+.angels img {
+  height: 90px;
+  width: 90px;
+}
+
+.left {
+  transform: scaleX(-1);
+}
+
+footer {
+  border-top: 1px solid var(--color-primary);
+  text-align: center;
+  padding: var(--space-m) 0;
+}
+
+@media (max-width: 768px) {
+  .cont {
+    width: 95%;
+    padding: 0 var(--space-xs);
+  }
+
+  button {
+    width: 85%;
+  }
+
+  .wrapper {
+    padding: 0 var(--space-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .cont {
+    width: 98%;
+    padding: 0 var(--space-xs);
+  }
+
+  button {
+    width: 90%;
+  }
+
+  .wrapper {
+    padding: 0 var(--space-xs);
+  }
+}

@@ -1,0 +1,42 @@
+---
+export interface Props {
+  content?: string;
+  imageSrc: string;
+  imageAlt?: string;
+}
+
+const { content, imageSrc, imageAlt = "24px" } = Astro.props;
+---
+
+<style>
+  .popover {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .popover img {
+    max-width: 200px;
+    height: auto;
+  }
+
+  .popover-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .popover-trigger:hover + .popover {
+    display: block;
+  }
+</style>
+
+<div class="popover-container">
+  <span class="popover-trigger">{content}</span>
+  <div class="popover">
+    <img src={imageSrc} alt={imageAlt} />
+  </div>
+</div>
